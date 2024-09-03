@@ -1,0 +1,18 @@
+Package: winratiopss
+Type: Package
+Title: win ratio power and sample size
+Version: 0.1.0
+Authors@R: c(person("Lauren", "Bonner", email = "lauren.bonner@northwestern.edu", role=c("cre", "aut")), person("Denise", "Scholtens", role=c("aut")))
+Description: A simulation-based power and sample size calculation approach, relying on the relationship between the win ratio and the rank distribution
+License: use_mit_license()
+Encoding: UTF-8
+LazyData: true
+Imports:
+  BiasedUrn,
+  parallel,
+  doParallel,
+  foreach, 
+  copula
+Depends: 
+  doParallel
+RoxygenNote: 7.3.1
