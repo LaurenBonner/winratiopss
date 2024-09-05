@@ -16,3 +16,5 @@ Imports:
 Depends: 
   doParallel
 RoxygenNote: 7.3.1
+URL: https://github.com/LaurenBonner/winratiopss
+BugReports: https://github.com/LaurenBonner/winratiopss/issues
