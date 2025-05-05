@@ -93,7 +93,6 @@ WinRatio_power <- function(n_arm_1, n_arm_2, alpha=0.05, WinRatio1=NULL, p1=NULL
       arm_a_n_top_p1<-rhyper(1,0.5*(n_arm_1+n_arm_2),0.5*(n_arm_1+n_arm_2),m_arm_1)
     }
 
-    # NEED TO CONFIRM THIS IS ACCURATE FOR RATIO != 1 (????)
 
     if (p1!=0.5){
       #noncentral hypergeometric - under alternative
