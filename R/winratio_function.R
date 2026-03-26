@@ -90,7 +90,9 @@ WinRatio_power <- function(n_arm_1, n_arm_2, alpha=0.05, WinRatio1=NULL, p1=NULL
 
     if (p1==0.5){
       #hypergeometric - under null
-      arm_a_n_top_p1<-rhyper(1,0.5*(n_arm_1+n_arm_2),0.5*(n_arm_1+n_arm_2),m_arm_1)
+      #BiasedUrn no longer supports "rhyper"
+      #arm_a_n_top_p1<-rhyper(1,0.5*(n_arm_1+n_arm_2),0.5*(n_arm_1+n_arm_2),n_arm_1)
+      arm_a_n_top_p1<-BiasedUrn::rWNCHypergeo(1,m1=0.5*(n_arm_1+n_arm_2),m2=0.5*(n_arm_1+n_arm_2),n=n_arm_1,odds=1)
     }
 
 
@@ -194,7 +196,9 @@ WinRatio_power <- function(n_arm_1, n_arm_2, alpha=0.05, WinRatio1=NULL, p1=NULL
   if (cens_prop > 0){
     if (p1==0.5){
       #hypergeometric - under null
-      arm_1_n_top_p1<-BiasedUrn::rhyper(1,0.5*(n_arm_1+n_arm_2),0.5*(n_arm_1+n_arm_2),n_arm_1)
+      #BiasedUrn no longer supports "rhyper"
+      #arm_1_n_top_p1<-BiasedUrn::rhyper(1,0.5*(n_arm_1+n_arm_2),0.5*(n_arm_1+n_arm_2),n_arm_1)
+      arm_1_n_top_p1<-BiasedUrn::rWNCHypergeo(1,m1=0.5*(n_arm_1+n_arm_2),m2=0.5*(n_arm_1+n_arm_2),n=n_arm_1,odds=1)
     }
 
 
@@ -240,7 +244,8 @@ WinRatio_power <- function(n_arm_1, n_arm_2, alpha=0.05, WinRatio1=NULL, p1=NULL
     ##effect size on second endpoint
     if (p2==0.5){
       #hypergeometric - under null
-      arm_1_n_top_p2<-BiasedUrn::rhyper(1,0.5*(n_arm_1+n_arm_2),0.5*(n_arm_1+n_arm_2),n_arm_1)
+      #arm_1_n_top_p2<-BiasedUrn::rhyper(1,0.5*(n_arm_1+n_arm_2),0.5*(n_arm_1+n_arm_2),n_arm_1)
+      arm_1_n_top_p2<-BiasedUrn::rWNCHypergeo(1,m1=0.5*(n_arm_1+n_arm_2),m2=0.5*(n_arm_1+n_arm_2),n=n_arm_1,odds=1)
     }
     if (p2!=0.5){
       #non-central hypergeometric - under alternative
