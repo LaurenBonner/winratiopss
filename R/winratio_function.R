@@ -184,10 +184,10 @@ WinRatio_power <- function(n_arm_1, n_arm_2, alpha=0.05, WinRatio1=NULL, p1=NULL
     alpha_2<- pnorm(z_0 + ((z_0+qnorm(1-(alpha/2)))/(1-a*(z_0+qnorm(1-(alpha/2))))))
     winratio_est_order<-winratio_est[order(winratio_est)]
 
-    lower_ci_bca<-quantile(winratio_est_order,alpha_1,na.rm=TRUE)
-    upper_ci_bca<-quantile(winratio_est_order,alpha_2,na.rm=TRUE)
+    lower_ci_bca[j]<-quantile(winratio_est_order,alpha_1,na.rm=TRUE)
+    upper_ci_bca[j]<-quantile(winratio_est_order,alpha_2,na.rm=TRUE)
 
-    power_bca<-ifelse(upper_ci_bca < 1 | lower_ci_bca > 1, 1, 0)
+    power_bca[j]<-ifelse(upper_ci_bca[j] < 1 | lower_ci_bca[j] > 1, 1, 0)
 
     if(print.iter==TRUE){print(j)}
   }
